@@ -256,15 +256,10 @@ def search_pa_list(src: List[str]) -> List[str]:
     """
     for pat, act in pa_list:
         mat = match(pat, src)
-        #print(mat)
         if mat is not None:
             answer = act(mat)
-            return answer if answer else ["No Answers"]
-    
+            return answer if answer else ["No answers"]   
     return ["I don't understand"]
-        #print(pat)
-        #print(src)
-        #print(act)
     #pass
 
 
@@ -290,7 +285,7 @@ def query_loop() -> None:
 # uncomment the following line once you've written all of your code and are ready to try
 # it out. Before running the following line, you should make sure that your code passes
 # the existing asserts.
-# query_loop()
+query_loop()
 
 if __name__ == "__main__":
     assert isinstance(title_by_year(["1974"]), list), "title_by_year not returning a list"
