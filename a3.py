@@ -217,6 +217,13 @@ def title_by_actor(matches: List[str]) -> List[str]:
     #print(result)
     #pass
 
+def director_by_year(matches: List[str]) -> List[str]:
+    result=[]
+    for movie in movie_db:
+        if str(matches[0]) == get_year(movie):
+            result.append(get_director(movie))
+    print(result)
+
 
 # dummy argument is ignored and doesn't matter
 def bye_action(dummy: List[str]) -> None:
@@ -238,6 +245,7 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("who acted in %"), actors_by_title),
     (str.split("when was % made"), year_by_title),
     (str.split("in what movies did % appear"), title_by_actor),
+    #(str.split("what actors acted in %"), year_by_actors)
     (["bye"], bye_action),
 ]
 
@@ -285,7 +293,7 @@ def query_loop() -> None:
 # uncomment the following line once you've written all of your code and are ready to try
 # it out. Before running the following line, you should make sure that your code passes
 # the existing asserts.
-query_loop()
+#query_loop()
 
 if __name__ == "__main__":
     assert isinstance(title_by_year(["1974"]), list), "title_by_year not returning a list"
@@ -297,6 +305,7 @@ if __name__ == "__main__":
     assert isinstance(actors_by_title(["jaws"]), list), "actors_by_title not returning a list"
     assert isinstance(year_by_title(["jaws"]), list), "year_by_title not returning a list"
     assert isinstance(title_by_actor(["orson welles"]), list), "title_by_actor not returning a list"
+    assert isinstance(director_by_year(["2023"]), list), "year_by_actors not returning a list"
     
     assert sorted(title_by_year(["1974"])) == sorted(
         ["amarcord", "chinatown"]

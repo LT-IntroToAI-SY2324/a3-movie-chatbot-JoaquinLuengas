@@ -9,6 +9,7 @@ It is a function that searches through a list and finds a pattern of a user inpu
 
 2. What movie did you add to the `movies.py` file?  What year was it made? Any specific reason you added that movie?
 
+I added the Super Mario Bros. Movie to the .py file.The modve was made in 2023.I added this movie because it is one of the only movies that I like but have not seen yet.
 
 3. What pattern / action did you add to the paList data structure?  Why do you think that is a useful pattern / action?
 
