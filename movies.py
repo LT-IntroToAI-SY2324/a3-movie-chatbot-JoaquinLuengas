@@ -434,5 +434,18 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "delroy lindo",
             "spike lee",
         ],
+    ),
+    (
+        "the super mario bros. movie",
+        "aaron horvath",
+        2023,
+        [
+            "chris pratt"
+            "charlie day"
+            "jack black"
+            "anya taylor-joy"
+            "charles martinet"
+            "seth rogan"
+        ]
     )
 ]
