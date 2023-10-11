@@ -13,6 +13,7 @@ I added the Super Mario Bros. Movie to the .py file.The modve was made in 2023.I
 
 3. What pattern / action did you add to the paList data structure?  Why do you think that is a useful pattern / action?
 
+I added "who directed in what year". I think that this is important to know what directors helped direct movies in years that some movies performed better than in other years.
 
 4. What is chatbot would you create that would be like this?  Describe why you would create it and what it would do.
 
@@ -24,5 +25,5 @@ Making sure all of the assets were working properly before calling the query loo
 
 6. Did you write a new assert for your pattern action?
 
-
+Yes, i made a new assert to make sure that my new function was working properly.
 
