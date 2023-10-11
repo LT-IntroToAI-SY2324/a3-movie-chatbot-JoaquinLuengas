@@ -220,9 +220,10 @@ def title_by_actor(matches: List[str]) -> List[str]:
 def director_by_year(matches: List[str]) -> List[str]:
     result=[]
     for movie in movie_db:
-        if str(matches[0]) == get_year(movie):
+        if int(matches[0]) == get_year(movie):
             result.append(get_director(movie))
-    print(result)
+    return result
+    #print(result)
 
 
 # dummy argument is ignored and doesn't matter
@@ -245,7 +246,7 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("who acted in %"), actors_by_title),
     (str.split("when was % made"), year_by_title),
     (str.split("in what movies did % appear"), title_by_actor),
-    #(str.split("what actors acted in %"), year_by_actors)
+    (str.split("who directed movies in %"), director_by_year),
     (["bye"], bye_action),
 ]
 
@@ -293,7 +294,7 @@ def query_loop() -> None:
 # uncomment the following line once you've written all of your code and are ready to try
 # it out. Before running the following line, you should make sure that your code passes
 # the existing asserts.
-#query_loop()
+query_loop()
 
 if __name__ == "__main__":
     assert isinstance(title_by_year(["1974"]), list), "title_by_year not returning a list"
@@ -305,7 +306,7 @@ if __name__ == "__main__":
     assert isinstance(actors_by_title(["jaws"]), list), "actors_by_title not returning a list"
     assert isinstance(year_by_title(["jaws"]), list), "year_by_title not returning a list"
     assert isinstance(title_by_actor(["orson welles"]), list), "title_by_actor not returning a list"
-    assert isinstance(director_by_year(["2023"]), list), "year_by_actors not returning a list"
+    assert isinstance(director_by_year(["1992"]), list), "director_by_year not returning a list"
     
     assert sorted(title_by_year(["1974"])) == sorted(
         ["amarcord", "chinatown"]
@@ -317,7 +318,7 @@ if __name__ == "__main__":
         ["casablanca", "citizen kane", "gone with the wind", "metropolis"]
     ), "failed title_before_year test"
     assert sorted(title_after_year(["1990"])) == sorted(
-        ["boyz n the hood", "dead again", "the crying game", "flirting", "malcolm x"]
+        ["boyz n the hood", "dead again", "the crying game", "flirting", "malcolm x", "the super mario bros. movie"]
     ), "failed title_after_year test"
     assert sorted(director_by_title(["jaws"])) == sorted(
         ["steven spielberg"]
